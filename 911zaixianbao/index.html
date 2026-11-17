@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>911在线爆料-事件线索与讨论追踪</title>
+<meta name="description" content="911在线爆料汇集可核实的事件线索、时间线与讨论回应，按日期与来源整理社区提交记录，提供爆料核查方法、争议说法对照与持续更新清单，方便按主题检索。">
+<meta name="keywords" content="911在线爆料">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1b2a'/%3E%3Cpath d='M18 44V22l14-8 14 8v22' fill='none' stroke='%23ff6b3d' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#0d1b2a;
+  --ink-2:#1e2f42;
+  --paper:#f7f5f0;
+  --card:#ffffff;
+  --line:#dcd7cc;
+  --line-strong:#b9b2a3;
+  --brand:#c2351e;
+  --brand-dark:#8f2413;
+  --accent:#f2a83b;
+  --teal:#1d6f6a;
+  --muted:#5c6470;
+  --muted-2:#7c8290;
+  --radius-s:6px;
+  --radius-m:12px;
+  --radius-l:20px;
+  --shadow-s:0 1px 2px rgba(13,27,42,.08);
+  --shadow-m:0 6px 18px rgba(13,27,42,.10);
+  --font-base:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --font-mono:"SFMono-Regular","Cascadia Mono",Consolas,"Courier New",monospace;
+  --fs-h1:clamp(1.75rem,2.6vw,2.6rem);
+  --fs-h2:clamp(1.3rem,1.9vw,1.65rem);
+  --fs-h3:1.06rem;
+  --fs-body:.975rem;
+  --fs-small:.85rem;
+  --space-1:6px;
+  --space-2:12px;
+  --space-3:20px;
+  --space-4:32px;
+  --space-5:52px;
+  --sticky-h:108px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h);}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-base);
+  font-size:var(--fs-body);
+  line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--brand-dark);text-decoration:none;}
+a:hover{text-decoration:underline;}
+img{max-width:100%;display:block;}
+h1,h2,h3,h4{margin:0 0 var(--space-2);line-height:1.3;font-weight:700;letter-spacing:.01em;}
+h1{font-size:var(--fs-h1);}
+h2{font-size:var(--fs-h2);}
+h3{font-size:var(--fs-h3);}
+p{margin:0 0 var(--space-2);}
+ul,ol{margin:0 0 var(--space-2);padding-left:1.35em;}
+li{margin-bottom:6px;}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px;}
+
+/* ---------- 吸顶组合 ---------- */
+.sticky-stack{
+  position:sticky;top:0;z-index:60;
+  box-shadow:var(--shadow-s);
+}
+.announce{
+  background:var(--ink);
+  color:#e9e4d8;
+  font-size:var(--fs-small);
+  padding:7px 0;
+}
+.announce .wrap{
+  display:flex;gap:var(--space-2);align-items:center;flex-wrap:wrap;
+}
+.announce .tag{
+  background:var(--brand);color:#fff;font-weight:700;
+  padding:1px 9px;border-radius:99px;font-size:.78rem;letter-spacing:.05em;white-space:nowrap;
+}
+.announce a{color:#ffd9a8;}
+.announce .ann-extra{color:#a8b0bb;margin-left:auto;}
+
+.site-head{
+  background:rgba(247,245,240,.97);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+  padding:10px 0;
+}
+.head-inner{
+  display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.brand svg{width:40px;height:40px;flex-shrink:0;}
+.brand-name{
+  font-size:1.12rem;font-weight:800;color:var(--ink);letter-spacing:.02em;
+  white-space:nowrap;
+}
+.brand-name span{color:var(--brand);}
+.head-nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto;}
+.head-nav a{
+  color:var(--ink-2);font-size:.88rem;padding:6px 10px;border-radius:var(--radius-s);
+  white-space:nowrap;
+}
+.head-nav a:hover{background:#ece7dc;text-decoration:none;}
+.head-tools{display:flex;align-items:center;gap:8px;}
+.search-box{display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:99px;background:#fff;padding:2px 4px 2px 12px;}
+.search-box input{
+  border:0;background:transparent;font:inherit;font-size:.86rem;width:150px;padding:5px 0;color:var(--ink);
+}
+.search-box input:focus{outline:none;}
+.search-box button{
+  border:0;background:var(--ink);color:#fff;border-radius:99px;padding:5px 13px;
+  font:inherit;font-size:.82rem;cursor:pointer;
+}
+.search-box button:hover{background:var(--brand-dark);}
+.menu-btn{
+  display:none;border:1px solid var(--line-strong);background:#fff;border-radius:var(--radius-s);
+  padding:7px 12px;font:inherit;font-size:.86rem;cursor:pointer;color:var(--ink);
+}
+.search-feedback{
+  font-size:var(--fs-small);color:var(--brand-dark);padding:2px 4px;display:none;
+}
+.search-feedback.on{display:block;}
+
+.wrap{width:min(1180px,calc(100% - 40px));margin:0 auto;}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 88% 12%,rgba(242,168,59,.35),transparent 42%),
+    radial-gradient(circle at 8% 92%,rgba(29,111,106,.28),transparent 46%),
+    linear-gradient(135deg,#10202f 0%,#1b3145 58%,#243a4a 100%);
+  color:#f4efe4;
+  padding:var(--space-5) 0 var(--space-4);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.25fr .75fr;gap:var(--space-4);align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#f2c98a;
+  border:1px solid rgba(242,201,138,.45);border-radius:99px;padding:4px 14px;margin-bottom:var(--space-3);
+}
+.hero h1{color:#fff;font-size:clamp(1.9rem,3.4vw,3rem);margin-bottom:var(--space-2);}
+.hero-lead{
+  color:#cdd6de;font-size:1.02rem;max-width:38em;margin-bottom:var(--space-3);
+}
+.hero-lead strong{color:#ffd9a8;}
+.hero-actions{display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3);}
+.btn{
+  display:inline-block;padding:10px 22px;border-radius:99px;font-weight:700;font-size:.92rem;
+  border:1px solid transparent;transition:transform .18s ease,background .18s ease;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px);}
+.btn-primary{background:var(--brand);color:#fff;}
+.btn-primary:hover{background:#d94a2c;}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#f4efe4;}
+.btn-ghost:hover{background:rgba(255,255,255,.12);}
+.hero-stats{
+  display:flex;gap:var(--space-3);flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:var(--space-3);
+}
+.hero-stats div{min-width:96px;}
+.hero-stats b{display:block;font-size:1.4rem;color:var(--accent);font-family:var(--font-mono);}
+.hero-stats span{font-size:.78rem;color:#a9b6c2;letter-spacing:.05em;}
+
+/* 首屏原创视觉：信号塔 + 时间刻度 */
+.hero-visual{position:relative;aspect-ratio:1/.92;max-width:340px;justify-self:end;width:100%;}
+.hero-visual svg{width:100%;height:100%;}
+.radar-pulse{
+  transform-origin:150px 150px;
+  animation:pulse 3.6s ease-out infinite;
+  opacity:0;
+}
+.radar-pulse:nth-child(2){animation-delay:1.2s;}
+.radar-pulse:nth-child(3){animation-delay:2.4s;}
+@keyframes pulse{
+  0%{transform:scale(.4);opacity:.85;}
+  100%{transform:scale(1.35);opacity:0;}
+}
+.blink-dot{animation:blink 2s steps(2,start) infinite;}
+@keyframes blink{to{opacity:.25;}}
+
+/* ---------- 主内容布局 ---------- */
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--space-4);
+  padding:var(--space-4) 0 var(--space-5);align-items:start;
+}
+.main-col{min-width:0;}
+.side-col{min-width:0;position:sticky;top:calc(var(--sticky-h) + 16px);}
+@media(max-width:1000px){
+  .side-col{position:static;}
+}
+
+/* 通用板块 */
+.section{margin-bottom:var(--space-5);}
+.section-head{
+  display:flex;align-items:baseline;gap:var(--space-2);flex-wrap:wrap;
+  border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:var(--space-3);
+}
+.section-head h2{margin:0;}
+.section-head .sub{font-size:var(--fs-small);color:var(--muted);}
+.section-head .no{
+  font-family:var(--font-mono);font-size:.8rem;color:var(--brand);font-weight:700;letter-spacing:.08em;
+}
+
+/* 网格卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2);}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:16px;box-shadow:var(--shadow-s);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-m);border-color:var(--line-strong);}
+.card .meta{font-size:.76rem;color:var(--muted-2);font-family:var(--font-mono);margin-bottom:6px;letter-spacing:.03em;}
+.card h3{font-size:1rem;margin-bottom:6px;}
+.card p{font-size:.875rem;color:var(--muted);margin:0;flex:1;}
+.card .chip{
+  align-self:flex-start;margin-top:12px;font-size:.74rem;color:var(--teal);
+  background:#e8f2f1;border-radius:99px;padding:2px 10px;
+}
+.card.feature{grid-column:span 2;}
+.card.feature h3{font-size:1.2rem;}
+
+/* 紧凑列表 */
+.tight-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line);}
+.tight-list li{
+  border-bottom:1px solid var(--line);margin:0;padding:12px 2px;
+  display:grid;grid-template-columns:92px minmax(0,1fr);gap:var(--space-2);align-items:start;
+}
+.tight-list time{
+  font-family:var(--font-mono);font-size:.78rem;color:var(--brand-dark);padding-top:3px;
+}
+.tight-list .t{font-weight:600;}
+.tight-list .d{font-size:.84rem;color:var(--muted);display:block;}
+
+/* 分栏正文 */
+.split-body{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);}
+.split-body .panel{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-m);padding:18px;
+}
+.split-body h3{margin-top:0;}
+
+/* 编号步骤 */
+.steps{list-style:none;padding:0;margin:0;counter-reset:step;display:grid;gap:var(--space-2);}
+.steps li{
+  counter-increment:step;position:relative;background:#fff;border:1px solid var(--line);
+  border-left:4px solid var(--brand);border-radius:var(--radius-s);padding:14px 16px 14px 56px;margin:0;
+}
+.steps li::before{
+  content:counter(step,decimal-leading-zero);
+  position:absolute;left:14px;top:14px;font-family:var(--font-mono);font-weight:700;
+  color:var(--brand);font-size:.95rem;
+}
+.steps strong{display:block;margin-bottom:2px;}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line-strong);border-radius:var(--radius-m);overflow:hidden;background:#fff;}
+.compare > div{padding:16px 18px;}
+.compare .col-a{background:#fdf4f1;border-right:1px solid var(--line);}
+.compare .col-b{background:#eef5f4;}
+.compare h3{font-size:.95rem;letter-spacing:.03em;}
+.compare ul{padding-left:1.15em;margin-bottom:0;font-size:.87rem;}
+
+/* 标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:8px;}
+.tag-index a{
+  font-size:.82rem;background:#fff;border:1px solid var(--line-strong);color:var(--ink-2);
+  border-radius:99px;padding:5px 14px;
+  transition:background .15s ease,color .15s ease;
+}
+.tag-index a:hover{background:var(--ink);color:#fff;text-decoration:none;border-color:var(--ink);}
+.tag-index a .c{font-family:var(--font-mono);font-size:.72rem;color:var(--muted-2);margin-left:5px;}
+.tag-index a:hover .c{color:#cdd6de;}
+
+/* 问答 */
+.faq details{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:0;margin-bottom:10px;overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;padding:14px 18px;font-weight:700;font-size:.95rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"＋";color:var(--brand);font-weight:700;flex-shrink:0;}
+.faq details[open] summary::after{content:"－";}
+.faq details[open] summary{border-bottom:1px solid var(--line);background:#fbf9f4;}
+.faq .ans{padding:14px 18px;font-size:.9rem;color:var(--ink-2);}
+.faq .ans p:last-child{margin-bottom:0;}
+
+/* 评论 */
+.comments{display:grid;gap:var(--space-2);}
+.comment{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-m);padding:14px 16px;
+  display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;
+}
+.avatar{
+  width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#fff;font-size:1rem;background:var(--teal);
+}
+.avatar.a2{background:#8f6b2e;}
+.avatar.a3{background:#5b4b8a;}
+.avatar.a4{background:#b04a3f;}
+.avatar.a5{background:#31688f;}
+.comment .who{font-size:.85rem;font-weight:700;}
+.comment .when{font-size:.74rem;color:var(--muted-2);font-family:var(--font-mono);margin-left:8px;font-weight:400;}
+.comment p{font-size:.88rem;margin:4px 0 0;color:var(--ink-2);}
+.comment .ref{font-size:.78rem;color:var(--brand-dark);margin-top:6px;display:inline-block;border-left:3px solid var(--accent);padding-left:8px;}
+
+/* 资讯列表 */
+.news-list{list-style:none;padding:0;margin:0;}
+.news-list li{border-bottom:1px dashed var(--line-strong);padding:11px 0;margin:0;font-size:.9rem;}
+.news-list .src{font-family:var(--font-mono);font-size:.76rem;color:var(--muted-2);margin-right:8px;}
+
+/* 侧栏 */
+.side-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:16px 18px;margin-bottom:var(--space-3);box-shadow:var(--shadow-s);
+}
+.side-card h3{font-size:.95rem;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+.side-nav{list-style:none;padding:0;margin:0;}
+.side-nav a{
+  display:block;font-size:.86rem;color:var(--ink-2);padding:6px 8px;border-radius:var(--radius-s);
+  border-left:3px solid transparent;
+}
+.side-nav a:hover{background:#f2eee4;text-decoration:none;}
+.side-nav a.active{background:#f2eee4;border-left-color:var(--brand);color:var(--brand-dark);font-weight:700;}
+.side-note{font-size:.8rem;color:var(--muted);}
+.side-list{list-style:none;padding:0;margin:0;font-size:.85rem;}
+.side-list li{padding:7px 0;border-bottom:1px solid #f0ece2;margin:0;}
+.side-list li:last-child{border-bottom:0;}
+.side-list .n{font-family:var(--font-mono);color:var(--brand);font-weight:700;margin-right:6px;}
+.mini-meter{font-size:.8rem;color:var(--muted);margin-top:6px;}
+.meter{height:6px;background:#ece7dc;border-radius:99px;overflow:hidden;margin:4px 0 10px;}
+.meter i{display:block;height:100%;background:var(--teal);border-radius:99px;}
+
+/* 深度解析 */
+.deep{background:#fff;border:1px solid var(--line-strong);border-radius:var(--radius-l);padding:var(--space-4);}
+.deep > .tag{
+  display:inline-block;font-size:.75rem;letter-spacing:.1em;background:var(--ink);color:#ffd9a8;
+  border-radius:99px;padding:3px 12px;margin-bottom:var(--space-2);
+}
+.deep h2{margin-bottom:var(--space-2);}
+.deep .lede{font-size:1rem;color:var(--ink-2);border-left:4px solid var(--accent);padding-left:16px;margin-bottom:var(--space-3);}
+.deep h3{margin-top:var(--space-3);padding-top:var(--space-2);border-top:1px dashed var(--line-strong);}
+.deep h3:first-of-type{border-top:0;padding-top:0;}
+.deep blockquote{
+  margin:var(--space-3) 0;background:#fbf6ea;border:1px solid #e8dcbb;border-radius:var(--radius-m);
+  padding:16px 18px;font-size:.92rem;color:var(--ink-2);
+}
+.deep blockquote cite{display:block;font-style:normal;font-size:.78rem;color:var(--muted);margin-top:8px;}
+.checklist{list-style:none;padding:0;margin:var(--space-2) 0;}
+.checklist li{position:relative;padding-left:26px;font-size:.9rem;margin-bottom:8px;}
+.checklist li::before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:800;}
+.warnlist li::before{content:"!";color:var(--brand);}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;position:relative;}
+.timeline::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--line-strong);}
+.timeline li{position:relative;padding:0 0 var(--space-3) 38px;margin:0;}
+.timeline li::before{
+  content:"";position:absolute;left:5px;top:6px;width:14px;height:14px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--brand);
+}
+.timeline .tl-time{font-family:var(--font-mono);font-size:.8rem;color:var(--brand-dark);display:block;}
+.timeline .tl-t{font-weight:700;}
+.timeline .tl-d{font-size:.86rem;color:var(--muted);}
+
+/* 榜单 */
+.rank{list-style:none;padding:0;margin:0;counter-reset:rk;}
+.rank li{
+  counter-increment:rk;display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:12px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-s);padding:11px 14px;margin-bottom:8px;
+  font-size:.9rem;
+}
+.rank li::before{
+  content:counter(rk);font-family:var(--font-mono);font-weight:800;font-size:1rem;color:var(--muted-2);
+  text-align:center;
+}
+.rank li:nth-child(1)::before{color:var(--brand);}
+.rank li:nth-child(2)::before{color:#b87423;}
+.rank li:nth-child(3)::before{color:var(--teal);}
+.rank .sc{font-family:var(--font-mono);font-size:.8rem;color:var(--teal);}
+
+/* 引语 / 证言 */
+.quote-card{
+  background:linear-gradient(135deg,#12222f,#1d3648);color:#eef2f5;border-radius:var(--radius-l);
+  padding:var(--space-4);position:relative;overflow:hidden;
+}
+.quote-card::before{
+  content:"“";position:absolute;right:18px;top:-10px;font-size:7rem;color:rgba(242,168,59,.22);
+  font-family:Georgia,serif;line-height:1;
+}
+.quote-card p{font-size:1.02rem;max-width:46em;position:relative;}
+.quote-card .who{font-size:.84rem;color:#f2c98a;margin-top:var(--space-2);}
+
+/* 页尾 */
+footer{
+  background:var(--ink);color:#c6ced6;padding:var(--space-5) 0 var(--space-3);
+  font-size:.88rem;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--space-3);margin-bottom:var(--space-4);}
+footer h3{font-size:.92rem;color:#fff;margin-bottom:10px;}
+footer a{color:#c6ced6;font-size:.85rem;}
+footer a:hover{color:#ffd9a8;}
+footer ul{list-style:none;padding:0;margin:0;}
+footer li{margin-bottom:6px;}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.foot-brand svg{width:34px;height:34px;}
+.foot-brand b{color:#fff;font-size:1.05rem;}
+.foot-tagline{color:#9aa6b2;max-width:26em;}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.14);padding-top:var(--space-3);
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.78rem;color:#8c98a5;
+}
+.foot-bottom a{font-size:.78rem;}
+
+/* 回到顶部 */
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:70;
+  background:var(--ink);color:#fff;border:0;border-radius:50%;
+  width:46px;height:46px;font:inherit;font-size:.78rem;cursor:pointer;
+  box-shadow:var(--shadow-m);opacity:0;pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;
+}
+#toTop.show{opacity:1;pointer-events:auto;}
+#toTop:hover{transform:translateY(-3px);background:var(--brand-dark);}
+
+/* 响应式 */
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{justify-self:start;max-width:260px;}
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .card.feature{grid-column:span 2;}
+  .layout{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:760px){
+  :root{--sticky-h:118px;}
+  .head-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:var(--paper);border-bottom:1px solid var(--line);
+    padding:10px 20px 16px;flex-direction:column;gap:2px;
+    box-shadow:var(--shadow-m);
+  }
+  .head-nav.open{display:flex;}
+  .head-nav a{padding:9px 6px;font-size:.92rem;border-bottom:1px solid #eee9dd;}
+  .site-head{position:relative;}
+  .head-inner{position:relative;}
+  .menu-btn{display:inline-block;}
+  .search-box input{width:112px;}
+  .split-body,.compare{grid-template-columns:1fr;}
+  .compare .col-a{border-right:0;border-bottom:1px solid var(--line);}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 28px);}
+  .card-grid{grid-template-columns:1fr;}
+  .card.feature{grid-column:span 1;}
+  .hero-stats{gap:var(--space-2);}
+  .hero-stats div{min-width:72px;}
+  .tight-list li{grid-template-columns:1fr;gap:2px;}
+  .deep{padding:var(--space-3);}
+  .foot-grid{grid-template-columns:1fr;}
+  .rank li{grid-template-columns:30px minmax(0,1fr);}
+  .rank .sc{grid-column:2;}
+  #toTop{right:12px;bottom:14px;width:42px;height:42px;}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+  .btn:hover,.card:hover,#toTop:hover{transform:none;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶组合 -->
+<div class="sticky-stack">
+  <div class="announce" role="region" aria-label="更新公告">
+    <div class="wrap">
+      <span class="tag">更新</span>
+      <span>11 月 7 日，城东物流园监控缺失一事的现场复核记录已补充至时间线第 4 条。</span>
+      <a href="/#timeline">查看时间线 →</a>
+      <span class="ann-extra">911在线爆料 · 线索按提交时间归档</span>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="wrap head-inner">
+      <a class="brand" href="/#" aria-label="返回首页">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0d1b2a"/>
+          <path d="M18 46V22l14-8 14 8v24" fill="none" stroke="#ff6b3d" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M24 46V27l8-5 8 5v19" fill="none" stroke="#f2a83b" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="32" cy="37" r="4.5" fill="#ffd166"/>
+        </svg>
+        <span class="brand-name">911<span>在线爆料</span></span>
+      </a>
+
+      <nav class="head-nav" id="headNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picked">精选推荐</a>
+        <a href="/#update">最新更新</a>
+        <a href="/#channels">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+      </nav>
+
+      <div class="head-tools">
+        <div class="search-box" role="search">
+          <input type="search" id="q" placeholder="查线索关键词" aria-label="站内搜索线索关键词">
+          <button type="button" id="qBtn">查找</button>
+        </div>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="headNav">栏目</button>
+      </div>
+      <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-kicker">线索 · 时间线 · 回应</span>
+      <h1 id="heroTitle">911在线爆料</h1>
+      <p class="hero-lead">
+        一条线索值不值得跟，先看它有没有时间、地点、可联系的当事人。这里按提交日期归档社区线索，把<strong>监控缺失、款项去向、现场照片来源</strong>这类具体问题拆成可核对的条目，附上原话出处与后续回应。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#update">看今天更新的线索</a>
+        <a class="btn btn-ghost" href="/#guide">提交前先读核查指南</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>37</b><span>本周新增线索</span></div>
+        <div><b>12</b><span>已附回应条目</span></div>
+        <div><b>5</b><span>待补关键证据</span></div>
+        <div><b>11/7</b><span>最近复核日期</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 300 300" role="img" aria-label="信号塔与时间刻度示意">
+        <defs>
+          <linearGradient id="gTower" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffb26b"/>
+            <stop offset="1" stop-color="#c2351e"/>
+          </linearGradient>
+        </defs>
+        <circle cx="150" cy="150" r="118" fill="none" stroke="rgba(242,201,138,.25)" stroke-width="1"/>
+        <circle cx="150" cy="150" r="86" fill="none" stroke="rgba(242,201,138,.18)" stroke-width="1"/>
+        <circle class="radar-pulse" cx="150" cy="150" r="118" fill="none" stroke="#f2a83b" stroke-width="2"/>
+        <circle class="radar-pulse" cx="150" cy="150" r="118" fill="none" stroke="#f2a83b" stroke-width="2"/>
+        <circle class="radar-pulse" cx="150" cy="150" r="118" fill="none" stroke="#f2a83b" stroke-width="2"/>
+        <path d="M150 52 L188 214 L112 214 Z" fill="url(#gTower)" opacity=".92"/>
+        <path d="M150 52 L188 214 M150 52 L112 214" stroke="#10202f" stroke-width="2" opacity=".45"/>
+        <line x1="126" y1="150" x2="174" y2="150" stroke="#10202f" stroke-width="2" opacity=".35"/>
+        <line x1="120" y1="184" x2="180" y2="184" stroke="#10202f" stroke-width="2" opacity=".35"/>
+        <circle class="blink-dot" cx="150" cy="52" r="7" fill="#ffd166"/>
+        <path d="M150 214 L150 246" stroke="#f2a83b" stroke-width="3"/>
+        <path d="M126 246 H174" stroke="#f2a83b" stroke-width="3" stroke-linecap="round"/>
+        <g stroke="rgba(242,201,138,.55)" stroke-width="1">
+          <line x1="60" y1="262" x2="240" y2="262"/>
+          <line x1="80" y1="258" x2="80" y2="266"/>
+          <line x1="110" y1="258" x2="110" y2="266"/>
+          <line x1="140" y1="258" x2="140" y2="266"/>
+          <line x1="170" y1="258" x2="170" y2="266"/>
+          <line x1="200" y1="258" x2="200" y2="266"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <!-- 主内容 -->
+  <main class="main-col" id="main">
+
+    <!-- 1 领域概览 -->
+    <section class="section" id="overview" aria-labelledby="h-overview">
+      <div class="section-head">
+        <span class="no">01</span>
+        <h2 id="h-overview">领域概览：一条爆料从提交到可核对要过几道关</h2>
+        <span class="sub">按 2026 年 10—11 月归档规则整理</span>
+      </div>
+      <div class="split-body">
+        <div class="panel">
+          <h3>线索一般长什么样</h3>
+          <p>社区提交的条目以三类为主：现场影像与截图、当事人或目击者的口头转述、以及带有编号的单据照片。10 月 12 日至 11 月 6 日归档的 214 条记录里，带时间戳的影像 71 条，单据类 48 条，纯文字转述 95 条。文字转述最多，可核验率也最低，仅 23% 能落到具体地点。</p>
+          <p>一条线索被标为“可核对”，通常要满足三项：事发日期明确到天、能指出至少一个具体地址或单位、提交者愿意留下可回访的联系方式。三项缺一，页面只作“待补”标记，不进入时间线。</p>
+        </div>
+        <div class="panel">
+          <h3>三类线索的处理差异</h3>
+          <ul>
+            <li><strong>影像类：</strong>重点看拍摄角度、画面里的店招与路牌、文件属性中的创建时间是否与口述一致。</li>
+            <li><strong>单据类：</strong>核对抬头的单位名称、编号位数、印章位置；模糊翻拍件一律退回补充原件。</li>
+            <li><strong>转述类：</strong>要求提交者写明消息来源是亲历、听他人讲还是二手转发，三者标注不同颜色。</li>
+          </ul>
+          <p>处理周期上，影像与单据平均 2 天给出初判，转述类常拖到 5 天以上，原因是回访联系方式缺失。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="section" id="picked" aria-labelledby="h-picked">
+      <div class="section-head">
+        <span class="no">02</span>
+        <h2 id="h-picked">精选内容推荐：本周值得先看的六条</h2>
+        <span class="sub">编辑按证据完整度排序，非热度排序</span>
+      </div>
+      <div class="card-grid">
+        <article class="card feature">
+          <div class="meta">11-06 · 监控缺失类 · 编号 A-2311</div>
+          <h3>城东物流园 3 号门监控缺失两小时，物业称硬盘更换</h3>
+          <p>提交者上传了 10 月 28 日 21:40 至 23:50 的门口照片，画面里值班室灯亮但闸机无记录。物业在 11 月 3 日的回复中称当晚更换硬盘，未提供更换单。关键缺口是硬盘序列号与更换时间，已列入待补清单。</p>
+          <span class="chip">已附回应</span>
+        </article>
+        <article class="card">
+          <div class="meta">11-05 · 款项去向类 · 编号 B-0872</div>
+          <h3>某小区维修基金 18 万元转账凭证余额对不上</h3>
+          <p>两张银行回单金额一致，收款账户尾号不同。业委会 11 月 4 日说明称系“内部调账”，未附调账单。</p>
+          <span class="chip">待补单据</span>
+        </article>
+        <article class="card">
+          <div class="meta">11-04 · 现场照片类 · 编号 C-1140</div>
+          <h3>沿江路施工围挡照片被指拍摄于去年，元数据待验</h3>
+          <p>提交图有 2025 年水印痕迹，EXIF 创建时间却是 2026-10-30，两个时间打架，先标“来源存疑”。</p>
+          <span class="chip">来源存疑</span>
+        </article>
+        <article class="card">
+          <div class="meta">11-03 · 口头转述类 · 编号 D-0566</div>
+          <h3>菜市场摊位费涨价传闻，三个摊主说法不一致</h3>
+          <p>一人称涨 40 元，一人称涨 15 元，第三人称未收到通知。缺收费票据，暂不进入时间线。</p>
+          <span class="chip">待补证人</span>
+        </article>
+        <article class="card">
+          <div class="meta">11-02 · 单据类 · 编号 B-0861</div>
+          <h3>培训机构退费协议编号跳号，前后相差 37 号</h3>
+          <p>两份协议日期相同、编号从 0412 跳到 0449，机构称“分册打印”。可核对项是印刷批次与签收表。</p>
+          <span class="chip">可核对</span>
+        </article>
+        <article class="card">
+          <div class="meta">10-31 · 影像类 · 编号 A-2287</div>
+          <h3>夜班公交车载视频片段 46 秒，时间码与报站声不符</h3>
+          <p>画面显示 22:13，报站语音提到下一站名与线路实际走向相反，提交者已补交完整行车记录申请。</p>
+          <span class="chip">已附回应</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="section" id="update" aria-labelledby="h-update">
+      <div class="section-head">
+        <span class="no">03</span>
+        <h2 id="h-update">最新更新：11 月 2 日至 11 月 7 日的条目变动</h2>
+        <span class="sub">只记录状态变化，不重复原条目内容</span>
+      </div>
+      <ul class="tight-list">
+        <li>
+          <time datetime="2026-11-07">11-07</time>
+          <span><span class="t">A-2311 城东物流园监控缺失</span><span class="d">现场复核补充第 4 条：3 号门岗亭 11 月 6 日 15:20 仍使用纸质登记本，值班表签名与物业提供的排班表差一人。</span></span>
+        </li>
+        <li>
+          <time datetime="2026-11-06">11-06</time>
+          <span><span class="t">B-0872 维修基金转账凭证</span><span class="d">业委会追加一张 10 月 30 日的调账说明扫描件，落款无经办人签字，状态维持“待补单据”。</span></span>
+        </li>
+        <li>
+          <time datetime="2026-11-05">11-05</time>
+          <span><span class="t">C-1140 沿江路围挡照片</span><span class="d">两位现场目击者分别于 11 月 4 日、5 日回访，均称围挡 10 月下旬才立起，与“去年照片”说法冲突。</span></span>
+        </li>
+        <li>
+          <time datetime="2026-11-04">11-04</time>
+          <span><span class="t">B-0861 退费协议编号跳号</span><span class="d">机构提交印刷厂交货单，批次号与跳号区间吻合，状态由“待补”改为“可核对”。</span></span>
+        </li>
+        <li>
+          <time datetime="2026-11-03">11-03</time>
+          <span><span class="t">A-2287 公交车载视频</span><span class="d">公交公司 11 月 2 日答复称车载硬盘当日故障，提供了维修工单号 G-20261031-04。</span></span>
+        </li>
+        <li>
+          <time datetime="2026-11-02">11-02</time>
+          <span><span class="t">D-0566 摊位费涨价传闻</span><span class="d">市场管理方在公示栏贴出 11 月收费价目表，摊位费一栏为空白，未解释原因。</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section" id="channels" aria-labelledby="h-channels">
+      <div class="section-head">
+        <span class="no">04</span>
+        <h2 id="h-channels">分类入口：按线索类型与发生场景检索</h2>
+        <span class="sub">括号内为归档条目数</span>
+      </div>
+      <div class="tag-index">
+        <a href="/#overview">监控缺失核查<span class="c">38</span></a>
+        <a href="/#overview">公共款项去向<span class="c">29</span></a>
+        <a href="/#overview">现场照片来源<span class="c">44</span></a>
+        <a href="/#overview">口头转述记录<span class="c">95</span></a>
+        <a href="/#overview">单据与合同编号<span class="c">48</span></a>
+        <a href="/#overview">车载与执法记录仪<span class="c">17</span></a>
+        <a href="/#overview">物业与业委会公告<span class="c">33</span></a>
+        <a href="/#overview">市场与摊位收费<span class="c">21</span></a>
+        <a href="/#overview">培训机构退费<span class="c">26</span></a>
+        <a href="/#overview">施工围挡与扰民<span class="c">19</span></a>
+        <a href="/#overview">招聘与欠薪记录<span class="c">31</span></a>
+        <a href="/#overview">交通与公交运营<span class="c">24</span></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析（唯一主体阅读区） -->
+    <section class="section" id="deep">
+      <article class="deep" aria-labelledby="h-deep">
+        <span class="tag">深度解析</span>
+        <h2 id="h-deep">监控缺失的“说法差”比缺失本身更值得追</h2>
+        <p class="lede">同一段监控，物业说“硬盘坏了”，值班表说“那天有人值守”，照片显示“值班室灯亮着”。三份材料互不矛盾，却拼不出完整两小时。核查的重点因此从“有没有录像”转向“谁在什么时间替换了哪块硬盘”。</p>
+
+        <h3>一、时间线：从 10 月 28 日到 11 月 7 日，说法变了三次</h3>
+        <p>10 月 28 日 21:40，城东物流园 3 号门闸机无抬杆记录。10 月 30 日，提交者第一次向物业书面查询，收到口头答复“系统升级”。11 月 3 日，物业书面回复改为“硬盘更换”，并给出日期 10 月 28 日 22:10 至 23:30。11 月 6 日复核时，岗亭值班表显示当晚 22:00—24:00 的值班人为“李某”，而物业提供的人员排班表里同一时段登记的是“王某”。三份材料中，只有“硬盘更换”有书面落款，另外两项都是口头或表格式记录。</p>
+        <p>把判断拆成可核对结构，至少三项能当场验：硬盘序列号与更换单据、闸机后台日志的导出文件、岗亭纸质登记本 10 月 28 日整页拍照。前两项物业尚未提供，第三项复核时已拍到，登记本当晚 22:15 有一行潦草签字，无法辨认姓名。这三项里只要有一项补上，两小时的空档就能定位到具体操作人。</p>
+
+        <h3>二、数据对比：三个月内同一园区第二次“设备原因”</h3>
+        <p>翻阅园区公开回复记录，8 月 19 日也出现过一次“设备故障导致数据未上传”，涉及南门道闸，处理结果是补录通行记录 12 条。两次间隔 70 天，回复模板句式几乎一致，都写“已完成自查，未发现人为因素”。第二次没有给出补录条目数量，也没有说明是否沿用同一批硬盘。</p>
+        <p>这类重复出现的解释，可信度取决于细节是否递增。第一次给了 12 条补录数字，第二次没有；第一次说明了设备型号，第二次只写“硬盘”。同一主体在同类事件中提供的细节变少，通常意味着自查流程松了，而不是事情更简单了。</p>
+
+        <h3>三、规则前后变化：更换硬盘到底要不要登记</h3>
+        <p>园区 2025 年 3 月版《门岗设备管理办法》第 7 条写明，监控存储设备更换须“当日填写设备变更单，附旧件照片，报安保主管签字”。2026 年 6 月修订版把“当日”改成“三个工作日内”，并删去旧件照片要求。物业 11 月 3 日的回复称“按现行制度执行”，但没有说明适用的是哪一版。</p>
+        <p>10 月 28 日是周四，按旧版必须当日登记，按新版最迟 11 月 2 日补齐。无论哪一版，到 11 月 7 日都该有单可查。现在缺的不是时间窗口，而是这份单子是否存在。规则修订本身不构成免责，只改变截止日。</p>
+
+        <blockquote>
+          转述与推测分开记：提交者称“听到保安说硬盘是临时拆走的”，这是转述，未录音；园区监控室夜间是否有人值守，属于推测，目前只有值班室亮灯的照片支撑，不能当作事实引用。
+          <cite>—— 11 月 6 日复核记录，编号 A-2311 附注</cite>
+        </blockquote>
+
+        <h3>四、可被反驳的判断</h3>
+        <p>判断一：这两小时的空档更可能来自人为操作，而非单纯设备故障。理由是三处记录对不上人，且第二次故障回复的细节少于第一次。反驳它的方式很直接：拿出 10 月 28 日的硬盘更换单和旧件照片，若时间、型号、签字齐全，这个判断就应撤回。判断二：园区自查流程在 6 月修订后出现松动。可核对项是 6 月至 10 月间的设备变更单数量，如果数量没有下降，这条判断同样不成立。两条判断都留了退路，读者可以拿材料来推翻。</p>
+
+        <ul class="checklist">
+          <li>已核对：闸机后台日志导出时间戳、岗亭纸质登记本整页照片。</li>
+          <li>已核对：排班表两个版本的姓名差异。</li>
+          <li>待补：硬盘序列号、设备变更单、旧件照片。</li>
+        </ul>
+        <ul class="checklist warnlist">
+          <li>尚未取得：监控室夜间值守记录。</li>
+          <li>尚未取得：6 月至 10 月设备变更单汇总。</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="section" id="guide" aria-labelledby="h-guide">
+      <div class="section-head">
+        <span class="no">06</span>
+        <h2 id="h-guide">体验指南：提交一条线索前的五步自查</h2>
+        <span class="sub">按顺序做，能省掉一轮退回补充</span>
+      </div>
+      <ol class="steps">
+        <li><strong>把时间写到分钟。</strong>“晚上九点多”和“21:40”在处理上差一天，前者要回访确认，后者可直接比对闸机记录。</li>
+        <li><strong>给出可定位的地址。</strong>写清园区名、门号、楼层或店招名称。只写“城东那边”的条目，回访成本高，通常排在队列后面。</li>
+        <li><strong>影像保留原文件。</strong>截图会丢元数据。手机拍摄的原图、原视频，连同文件属性页一起提交，核查创建时间是否与口述一致。</li>
+        <li><strong>单据拍全四角。</strong>抬头、编号、金额、印章四项缺一不可。翻拍件模糊的，先补原件照片，再谈内容。</li>
+        <li><strong>注明消息来源。</strong>亲历、听当事人讲、二手转发，三种标注影响处理优先级。转发类不要求联系方式，但要求写明最初发布者与发布时间。</li>
+      </ol>
+      <div class="compare" style="margin-top:var(--space-3)">
+        <div class="col-a">
+          <h3>容易被打回的写法</h3>
+          <ul>
+            <li>“最近小区物业很乱，大家小心。”</li>
+            <li>“听说有人拿了钱，具体不清楚。”</li>
+            <li>“图片网上看到的，应该假不了。”</li>
+          </ul>
+        </div>
+        <div class="col-b">
+          <h3>可直接进入核查的写法</h3>
+          <ul>
+            <li>“10 月 30 日 19:20，3 号楼电梯公告栏贴出涨价通知，落款无日期。”</li>
+            <li>“两张回单收款账户尾号 4471 与 4437，金额均 9 万元，日期同为 10 月 12 日。”</li>
+            <li>“照片原图创建时间 10 月 28 日 21:41，画面中店招与地图街景一致。”</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section faq" id="faq" aria-labelledby="h-faq">
+      <div class="section-head">
+        <span class="no">07</span>
+        <h2 id="h-faq">常见问题</h2>
+        <span class="sub">按提问频次排列</span>
+      </div>
+
+      <details>
+        <summary>提交线索后多久能看到处理状态？</summary>
+        <div class="ans">
+          <p>影像与单据类通常 2 个工作日内出现初判标记，转述类视回访情况，平均 5 天。状态分四种：可核对、待补单据、来源存疑、已附回应。状态变化只会追加在时间线里，不会改动原条目文字。</p>
+        </div>
+      </details>
+      <details>
+        <summary>没有联系方式还能提交吗？</summary>
+        <div class="ans">
+          <p>可以，但条目只进入“待补”池，不进入时间线。影像类若能自证时间与地点，例如画面含路牌和当天报纸，可豁免联系方式一项。转述类必须留可回访渠道，否则无法核实来源层级。</p>
+        </div>
+      </details>
+      <details>
+        <summary>当事人不愿意实名，记录会怎么写？</summary>
+        <div class="ans">
+          <p>用“提交者”“目击者 A”“值班人员”这类代称，同时在附注里保留取得联系的时间与方式，便于后续复核。姓名、电话不公开，只记录是否存在有效联系渠道。</p>
+        </div>
+      </details>
+      <details>
+        <summary>监控录像缺失这类线索，最关键的一张材料是什么？</summary>
+        <div class="ans">
+          <p>设备变更单。硬盘更换、格式化、迁移都会留下单据，单据上的时间、型号、经办人签字三项能直接回答“谁在什么时候动了存储设备”。没有这张单，其他材料只能证明录像没了，证明不了为什么没。</p>
+        </div>
+      </details>
+      <details>
+        <summary>同一件事多人提交，会被合并吗？</summary>
+        <div class="ans">
+          <p>会按事发地点与日期合并成一条主记录，不同来源作为附注分层列出：亲历、目击、转发。合并后条目编号保留最早一条，其余编号在时间线中标注“并入 A-xxxx”。</p>
+        </div>
+      </details>
+      <details>
+        <summary>被记录的一方提出异议，怎么处理？</summary>
+        <div class="ans">
+          <p>异议原文照登，标注为“回应”，与提交内容并列，不做删改。若异议附带了单据或截图，进入复核队列，复核结论追加在时间线末尾，原判断保留但注明“已被部分推翻”或“维持”。</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section" id="voices" aria-labelledby="h-voices">
+      <div class="section-head">
+        <span class="no">08</span>
+        <h2 id="h-voices">用户评论：关于具体条目的几种看法</h2>
+        <span class="sub">评论按提交先后排列，含中性意见</span>
+      </div>
+      <div class="comments">
+        <div class="comment">
+          <div class="avatar">周</div>
+          <div>
+            <div class="who">周明远<span class="when">11-07 09:12</span></div>
+            <p>城东物流园那条，我更想看 11 月 6 日拍的登记本整页。签字潦草没关系，只要和排班表对得上人就行。现在两边姓名差一个，光这一点就够再问一轮。</p>
+            <span class="ref">指向条目：A-2311 监控缺失</span>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar a2">陈</div>
+          <div>
+            <div class="who">陈姐在菜场<span class="when">11-06 18:40</span></div>
+            <p>摊位费那条我就在那个市场。价目表贴出来的时候收费窗口没人，问了两句，工作人员说等通知。涨 40 元和涨 15 元两种说法我都听到了，但没见到票据，先别急着下结论。</p>
+            <span class="ref">指向条目：D-0566 摊位费涨价</span>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar a3">老</div>
+          <div>
+            <div class="who">老葛<span class="when">11-06 11:05</span></div>
+            <p>退费协议编号跳号改成“可核对”我有点保留。印刷厂交货单只能说明纸是同一批，说明不了中间 37 份协议发给谁了。签收表那一页还是得看。</p>
+            <span class="ref">指向条目：B-0861 退费协议编号</span>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar a4">林</div>
+          <div>
+            <div class="who">林一舟<span class="when">11-05 22:31</span></div>
+            <p>公交车那段视频，报站声和线路走向对不上，这个细节比时长更重要。22:13 时间码如果和调度系统一致，那问题就不在画面，在声音轨。等维修工单 G-20261031-04 的细节。</p>
+            <span class="ref">指向条目：A-2287 车载视频</span>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar a5">禾</div>
+          <div>
+            <div class="who">禾木<span class="when">11-05 10:18</span></div>
+            <p>沿江路围挡照片那个“去年水印”的说法我持怀疑。2025 年的水印可能来自修图软件模板，不等于拍摄时间。EXIF 创建时间 10 月 30 日也未必是原始文件，得看是否二次导出。两位目击者说 10 月下旬才立起来，这个更有分量。</p>
+            <span class="ref">指向条目：C-1140 围挡照片</span>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar">赵</div>
+          <div>
+            <div class="who">赵琪<span class="when">11-04 16:44</span></div>
+            <p>维修基金那两张回单，尾号不同其实常见，有的银行一卡多户。真正要看的是 10 月 30 日调账说明为什么没有经办人签字。没有签字，余额对不上就说不清。</p>
+            <span class="ref">指向条目：B-0872 维修基金</span>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar a2">吴</div>
+          <div>
+            <div class="who">吴敏<span class="when">11-03 20:07</span></div>
+            <p>时间线这个做法可以，但“待补”挂了两个月还挂着的，是不是该标一下最晚补齐日？A-2311 从 10 月 30 日到现在，物业一直拖，页面只能干等。给个截止日，对读者更友好。</p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar a3">许</div>
+          <div>
+            <div class="who">许南<span class="when">11-03 08:55</span></div>
+            <p>11 月 3 日物业那条书面回复，落款日期写的是 11 月 2 日，收到是 3 日。跨了一天，不影响内容，但时间线最好按落款记，别按收到记，不然复核时容易对不上。</p>
+            <span class="ref">指向条目：A-2311 回应记录</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section" id="news" aria-labelledby="h-news">
+      <div class="section-head">
+        <span class="no">09</span>
+        <h2 id="h-news">相关资讯：10 月下旬以来的公开信息</h2>
+        <span class="sub">来源与日期并列，摘要不复述标题</span>
+      </div>
+      <ul class="news-list">
+        <li><span class="src">11-06 园区公示栏</span>城东物流园贴出 11 月安保值班调整表，3 号门夜班由两人减为一人，未说明原因。</li>
+        <li><span class="src">11-05 公交公司客服</span>车载硬盘维修工单号 G-20261031-04 对应车型为 8 米纯电，与涉事线路车型一致。</li>
+        <li><span class="src">11-04 业委会公告</span>维修基金调账说明张贴于 3 号楼门厅，纸张无公章，仅手写签字一处。</li>
+        <li><span class="src">11-03 市场管理方</span>摊位费价目表更新，摊位费一栏留白，水电费标准照旧。</li>
+        <li><span class="src">10-30 街道回复</span>沿江路施工围挡许可编号与公示牌一致，许可期限至 12 月 20 日。</li>
+        <li><span class="src">10-29 印刷厂交货单</span>批次号 2026-09-B，交货日期 9 月 26 日，与退费协议编号区间对应。</li>
+      </ul>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="section" id="related" aria-labelledby="h-related">
+      <div class="section-head">
+        <span class="no">10</span>
+        <h2 id="h-related">相关推荐</h2>
+        <span class="sub">按线索类型延伸</span>
+      </div>
+      <div class="tag-index">
+        <a href="/#deep">监控缺失核查的判断方法</a>
+        <a href="/#guide">提交证据的五步自查</a>
+        <a href="/#timeline">城东物流园事件时间线</a>
+        <a href="/#overview">单据编号异常怎么核</a>
+        <a href="/#faq">异议回应如何并列记录</a>
+        <a href="/#channels">公共款项去向类线索</a>
+        <a href="/#voices">读者对跳号协议的讨论</a>
+        <a href="/#guide">照片元数据与拍摄时间核对</a>
+        <a href="/#overview">口头转述的三层标注</a>
+      </div>
+    </section>
+
+    <!-- 11 事件时间线 -->
+    <section class="section" id="timeline" aria-labelledby="h-timeline">
+      <div class="section-head">
+        <span class="no">11</span>
+        <h2 id="h-timeline">事件时间线：城东物流园 3 号门两小时空档</h2>
+        <span class="sub">每条注明材料来源</span>
+      </div>
+      <ol class="timeline">
+        <li>
+          <span class="tl-time">10-28 21:40</span>
+          <span class="tl-t">闸机无抬杆记录</span>
+          <span class="tl-d">来源：闸机后台日志导出文件，导出于 10 月 30 日 10:12。</span>
+        </li>
+        <li>
+          <span class="tl-time">10-28 23:50</span>
+          <span class="tl-t">录像恢复有信号，中间两小时十一分无文件</span>
+          <span class="tl-d">来源：提交者上传的存储目录截图，文件夹大小显示 0 KB。</span>
+        </li>
+        <li>
+          <span class="tl-time">10-30 14:05</span>
+          <span class="tl-t">首次书面查询，口头答复“系统升级”</span>
+          <span class="tl-d">来源：提交者填写的查询记录，无对方书面落款。</span>
+        </li>
+        <li>
+          <span class="tl-time">11-03 17:20</span>
+          <span class="tl-t">物业书面回复改称硬盘更换，时段 22:10—23:30</span>
+          <span class="tl-d">来源：物业盖章回复件，落款日期 11 月 2 日。</span>
+        </li>
+        <li>
+          <span class="tl-time">11-06 15:20</span>
+          <span class="tl-t">现场复核，岗亭仍用纸质登记本，签名与排班表差一人</span>
+          <span class="tl-d">来源：复核照片 6 张，含登记本当页与值班表。</span>
+        </li>
+        <li>
+          <span class="tl-time">11-07 09:40</span>
+          <span class="tl-t">物业补充称硬盘更换单“在走流程”</span>
+          <span class="tl-d">来源：电话答复，转述记录，未取得书面材料。</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 12 榜单 -->
+    <section class="section" id="rank" aria-labelledby="h-rank">
+      <div class="section-head">
+        <span class="no">12</span>
+        <h2 id="h-rank">线索完整度榜：11 月第一周</h2>
+        <span class="sub">满分 100，按可核对项占比计分</span>
+      </div>
+      <ol class="rank">
+        <li><span>B-0861 培训机构退费协议编号跳号</span><span class="sc">86</span></li>
+        <li><span>A-2287 夜班公交车载视频 46 秒</span><span class="sc">79</span></li>
+        <li><span>A-2311 城东物流园监控缺失两小时</span><span class="sc">71</span></li>
+        <li><span>C-1140 沿江路施工围挡照片时间存疑</span><span class="sc">64</span></li>
+        <li><span>B-0872 小区维修基金 18 万元转账凭证</span><span class="sc">58</span></li>
+        <li><span>D-0566 菜市场摊位费涨价说法不一</span><span class="sc">41</span></li>
+      </ol>
+      <p style="font-size:.85rem;color:var(--muted);margin-top:10px;">计分口径：时间明确、地址可定位、材料可回溯、有回应四项各 25 分。B-0861 四项齐全但缺签收表，扣 14 分。D-0566 仅时间一项明确，材料与回应均缺。</p>
+    </section>
+
+    <!-- 13 引语证言 -->
+    <section class="section" id="testimony" aria-labelledby="h-testimony">
+      <div class="section-head">
+        <span class="no">13</span>
+        <h2 id="h-testimony">提交者证言</h2>
+        <span class="sub">经本人同意后整理发布</span>
+      </div>
+      <div class="quote-card">
+        <p>“我不是想搞大事情，就是那两小时正好是我下夜班经过的时间，闸机没记录，我却确实进了园区。把照片和登记本拍下来，是想让物业自己把更换单拿出来。单子一出来，事情就清楚了，不用谁去猜。”</p>
+        <div class="who">—— A-2311 提交者，11 月 6 日复核后口述，编号存档</div>
+      </div>
+      <div class="quote-card" style="margin-top:var(--space-3);background:linear-gradient(135deg,#1f2a20,#33402c)">
+        <p>“退费协议跳号那件事，最开始我只是觉得编号奇怪。后来把两份协议摆一起，日期一样、编号差 37，才想到去问印刷批次。机构答复比我想的快，交货单一交，事情反而简单了。可签收表还是没给，这一项我记着。”</p>
+        <div class="who">—— B-0861 提交者，11 月 4 日书面回复附言</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 侧栏 -->
+  <aside class="side-col" aria-label="侧边栏">
+    <div class="side-card">
+      <h3>栏目导航</h3>
+      <ul class="side-nav" id="sideNav">
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#picked">精选内容推荐</a></li>
+        <li><a href="/#update">最新更新</a></li>
+        <li><a href="/#channels">分类入口</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#voices">用户评论</a></li>
+        <li><a href="/#timeline">事件时间线</a></li>
+        <li><a href="/#rank">线索完整度榜</a></li>
+      </ul>
+    </div>
+
+    <div class="side-card">
+      <h3>状态分布</h3>
+      <div class="mini-meter">可核对 · 71 条</div>
+      <div class="meter"><i style="width:71%"></i></div>
+      <div class="mini-meter">待补单据 · 48 条</div>
+      <div class="meter"><i style="width:48%"></i></div>
+      <div class="mini-meter">来源存疑 · 33 条</div>
+      <div class="meter"><i style="width:33%;background:var(--brand)"></i></div>
+      <div class="mini-meter">已附回应 · 12 条</div>
+      <div class="meter"><i style="width:12%;background:var(--accent)"></i></div>
+      <p class="side-note" style="margin-top:10px;">统计区间 10 月 12 日至 11 月 7 日，共 214 条。</p>
+    </div>
+
+    <div class="side-card">
+      <h3>本周被引用最多的材料</h3>
+      <ul class="side-list">
+        <li><span class="n">01</span>闸机后台日志导出文件</li>
+        <li><span class="n">02</span>印刷厂交货单批次号</li>
+        <li><span class="n">03</span>车载硬盘维修工单</li>
+        <li><span class="n">04</span>岗亭纸质登记本照片</li>
+        <li><span class="n">05</span>银行回单收款账户尾号</li>
+      </ul>
+    </div>
+
+    <div class="side-card">
+      <h3>提交前提醒</h3>
+      <p class="side-note">影像保留原文件，单据拍全四角，转述注明消息来源。三项齐了，处理速度通常快两天。详见<a href="/#guide">体验指南</a>。</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1e2f42"/>
+            <path d="M18 46V22l14-8 14 8v24" fill="none" stroke="#ff6b3d" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="32" cy="37" r="4.5" fill="#ffd166"/>
+          </svg>
+          <b>911在线爆料</b>
+        </div>
+        <p class="foot-tagline">把线索落到日期、地址与可回访的人和单据上，能对的先对上，对不上的标清楚。</p>
+      </div>
+      <div>
+        <h3>线索分类</h3>
+        <ul>
+          <li><a href="/#channels">监控缺失核查</a></li>
+          <li><a href="/#channels">公共款项去向</a></li>
+          <li><a href="/#channels">现场照片来源</a></li>
+          <li><a href="/#channels">单据与合同编号</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>阅读与提交</h3>
+        <ul>
+          <li><a href="/#guide">提交证据五步自查</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#voices">用户评论</a></li>
+          <li><a href="/#rank">线索完整度榜</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>说明</h3>
+        <ul>
+          <li>条目编号、日期、回复内容均为示例数据，用于演示归档结构。</li>
+          <li>示例不指向现实中的具体个人或单位。</li>
+          <li>页脚更新时间：2026-11-07，对应正文 A-2311 复核记录与时间线第 6 条。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 911在线爆料 · 内容以示例数据演示，按提交时间归档。</span>
+      <span><a href="/#overview">回到领域概览</a></span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" type="button" aria-label="回到页面顶部">顶部</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var menuBtn = document.getElementById("menuBtn");
+  var headNav = document.getElementById("headNav");
+  if(menuBtn && headNav){
+    menuBtn.addEventListener("click", function(){
+      var open = headNav.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    headNav.addEventListener("click", function(e){
+      if(e.target.tagName === "A"){
+        headNav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded","false");
+      }
+    });
+  }
+
+  /* 本地搜索 */
+  var q = document.getElementById("q");
+  var qBtn = document.getElementById("qBtn");
+  var feedback = document.getElementById("searchFeedback");
+  var sections = Array.prototype.slice.call(document.querySelectorAll("main section"));
+
+  function doSearch(){
+    var key = (q.value || "").trim();
+    if(!key){
+      feedback.textContent = "请输入关键词，例如“监控缺失”“退费协议编号”。";
+      feedback.classList.add("on");
+      return;
+    }
+    var hit = null;
+    for(var i=0;i<sections.length;i++){
+      if(sections[i].textContent.indexOf(key) !== -1){
+        hit = sections[i];
+        break;
+      }
+    }
+    if(hit){
+      feedback.textContent = "已定位到相关板块，请查看下方内容。";
+      feedback.classList.add("on");
+      hit.scrollIntoView({behavior:"smooth", block:"start"});
+    }else{
+      feedback.textContent = "没有找到包含“" + key + "”的条目，可换用“款项去向”“照片来源”等类别词再试。";
+      feedback.classList.add("on");
+    }
+  }
+  if(qBtn){ qBtn.addEventListener("click", doSearch); }
+  if(q){ q.addEventListener("keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); doSearch(); } }); }
+
+  /* 侧栏滚动高亮 */
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll("#sideNav a"));
+  var targets = sideLinks.map(function(a){
+    var id = a.getAttribute("href").replace("/#","");
+    return document.getElementById(id);
+  });
+  function highlight(){
+    var pos = window.scrollY + 160;
+    var idx = -1;
+    for(var i=0;i<targets.length;i++){
+      if(targets[i] && targets[i].offsetTop <= pos){ idx = i; }
+    }
+    sideLinks.forEach(function(a){ a.classList.remove("active"); });
+    if(idx > -1 && sideLinks[idx]){ sideLinks[idx].classList.add("active"); }
+  }
+  window.addEventListener("scroll", highlight, {passive:true});
+  highlight();
+
+  /* 回到顶部 */
+  var toTop = document.getElementById("toTop");
+  function toggleTop(){
+    if(window.scrollY > 520){ toTop.classList.add("show"); }
+    else{ toTop.classList.remove("show"); }
+  }
+  window.addEventListener("scroll", toggleTop, {passive:true});
+  toggleTop();
+  toTop.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"911在线爆料",
+  "description":"按提交日期归档社区事件线索，提供时间线、回应记录、核查方法与争议说法对照。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"提交线索后多久能看到处理状态？",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"影像与单据类通常2个工作日内出现初判标记，转述类平均5天，取决于回访情况。状态分为可核对、待补单据、来源存疑、已附回应四种。"
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"没有联系方式还能提交吗？",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"可以提交，但条目进入待补池，不进入时间线。影像能自证时间与地点的可豁免联系方式，转述类必须留可回访渠道。"
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"当事人不愿意实名，记录会怎么写？",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"使用提交者、目击者A、值班人员等代称，附注记录取得联系的时间与方式，姓名与电话不公开。"
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"监控录像缺失这类线索，最关键的一张材料是什么？",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"设备变更单。单据上的时间、型号、经办人签字三项可直接回答谁在何时动了存储设备，单靠其他材料只能证明录像缺失。"
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"同一件事多人提交，会被合并吗？",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"按事发地点与日期合并为一条主记录，保留最早编号，其余编号在时间线中标注并入关系，不同来源按亲历、目击、转发分层列出。"
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"被记录的一方提出异议，怎么处理？",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"异议原文照登并标注为回应，与提交内容并列。附带材料进入复核队列，结论追加在时间线末尾，原判断保留并注明维持或部分推翻。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+                                                                                                         </html>
